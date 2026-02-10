@@ -2,52 +2,55 @@ import React from 'react';
 
 const Hero: React.FC = () => {
     return (
-        <section className="hero">
-            <div className="container">
-                <div className="hero-content">
-                    <span className="section-tag initial-fade-in" style={{ animationDelay: '0.2s' }}>
-                        Transforming ideas into digital reality
-                    </span>
+        <section className="hero" id="top">
+            <div className="hero-background">
+                <div className="gradient-orb gradient-orb-1"></div>
+                <div className="gradient-orb gradient-orb-2"></div>
+            </div>
 
-                    <h1 className="hero-title text-gradient initial-fade-in" style={{ animationDelay: '0.4s' }}>
-                        Crafting Digital <br />
-                        Experiences That <br />
-                        Define <span style={{ fontStyle: 'italic', fontFamily: 'var(--font-serif)', color: 'var(--color-primary)' }}>Excellence</span>
+            <div className="hero-container">
+                <div className="hero-content">
+                    <span className="hero-eyebrow">Digital Craftsman</span>
+
+                    <h1 className="hero-title">
+                        <span className="hero-title-line">Building</span>
+                        <span className="hero-title-line">Exceptional</span>
+                        <span className="hero-title-line">Digital Products</span>
                     </h1>
 
-                    <p className="hero-description initial-fade-in" style={{ animationDelay: '0.6s' }}>
-                        I’m a Senior Software Engineer focused on building sophisticated,
-                        high-performance web applications that merge technical rigor with
-                        exceptional design.
+                    <p className="hero-description">
+                        Senior Software Engineer & Creative Developer crafting beautiful,
+                        performant web experiences that balance business impact with
+                        user delight.
                     </p>
 
-                    <div className="hero-actions initial-fade-in" style={{ animationDelay: '0.8s', display: 'flex', gap: '1.5rem' }}>
+                    <div className="hero-actions">
                         <a href="#projects" className="btn btn-primary">
-                            Explore Case Studies
+                            View my work
                         </a>
-                        <a href="#about" className="btn btn-outline">
-                            Learn my process
+                        <a href="#contact" className="btn btn-secondary">
+                            Get in touch
                         </a>
+                    </div>
+                </div>
+
+                <div className="hero-image">
+                    <div className="hero-image-wrapper">
+                        <img
+                            src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1600&auto=format&fit=crop"
+                            alt="Your Name - Senior Software Engineer"
+                            loading="lazy"
+                        />
+                        <div className="hero-image-decoration"></div>
                     </div>
                 </div>
             </div>
 
-            {/* Visual Decor */}
-            <div className="hero-scroll-indicator initial-fade-in" style={{
-                position: 'absolute',
-                bottom: '3rem',
-                left: '5vw',
-                animationDelay: '1.5s',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem',
-                color: 'var(--color-secondary)',
-                fontSize: '0.85rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em'
-            }}>
-                <div style={{ width: '40px', height: '1px', background: 'var(--color-secondary)' }}></div>
-                Scroll to discover
+            <div className="hero-scroll-indicator">
+                <span>Scroll to explore</span>
+                <svg className="scroll-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 16L6 10h12l-6 6z" />
+                </svg>
             </div>
         </section>
     );
