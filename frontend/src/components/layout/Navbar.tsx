@@ -5,41 +5,69 @@ const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
+        const handleScroll = () => setIsScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-            <div className="navbar-container">
-                <a href="#" className="navbar-logo">JohnDoe</a>
+            <div className="container nav-content">
+                <a href="/" className="navbar-logo">
+                    <span style={{ fontWeight: 800, fontSize: '1.6rem', letterSpacing: '-0.05em', color: 'var(--color-primary)' }}>JD.</span>
+                </a>
 
-                <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
-                    <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
-                    <li><a href="#work" onClick={() => setIsMenuOpen(false)}>Work</a></li>
-                    <li><a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a></li>
-                    <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
-                </ul>
+                <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                    <a href="#about" className="nav-link">About</a>
+                    <a href="#projects" className="nav-link">Case Studies</a>
+                    <a href="#experience" className="nav-link">Journey</a>
+                    <a href="#contact" className="nav-link">Contact</a>
+                </div>
 
-                <a href="#contact" className="navbar-cta">Let's Talk</a>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <a href="#contact" className="btn btn-primary" style={{ padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}>
+                        Get in touch
+                    </a>
 
-                <button
-                    className={`navbar-toggle ${isMenuOpen ? 'active' : ''}`}
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                    <button
+                        className="mobile-toggle"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        style={{
+                            display: 'none',
+                            background: 'none',
+                            border: 'none',
+                            color: 'white',
+                            fontSize: '1.5rem',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        {isMenuOpen ? '✕' : '☰'}
+                    </button>
+                </div>
             </div>
+
+            <style>{`
+        @media (max-width: 1024px) {
+          .mobile-toggle { display: block !important; }
+          .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 100%;
+            background: var(--color-bg);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: var(--transition-slow);
+            z-index: -1;
+          }
+          .nav-links.active {
+            transform: translateX(0);
+          }
+        }
+      `}</style>
         </nav>
     );
 };

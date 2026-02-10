@@ -1,28 +1,45 @@
 import React from 'react';
 
-interface Achievement {
-    title: string;
-    value: string;
-    label: string;
-}
-
-const achievements: Achievement[] = [
-    { title: "Projects Completed", value: "50+", label: "Successful Deliveries" },
-    { title: "Years Experience", value: "5+", label: "Professional Growth" },
-    { title: "Open Source", value: "20+", label: "Contributions" },
-    { title: "Client Satisfaction", value: "100%", label: "Positive Feedback" }
-];
-
 const Achievements: React.FC = () => {
+    const stats = [
+        { value: "08+", label: "Years Experience" },
+        { value: "120+", label: "Success Projects" },
+        { value: "45+", label: "Active Clients" },
+        { value: "12", label: "Global Awards" }
+    ];
+
     return (
-        <section className="achievements">
-            <div className="achievements-container">
-                <div className="achievements-grid">
-                    {achievements.map((item, idx) => (
-                        <div key={idx} className="achievement-item">
-                            <span className="achievement-value">{item.value}</span>
-                            <h3 className="achievement-title">{item.title}</h3>
-                            <p className="achievement-label">{item.label}</p>
+        <section className="achievements" style={{ padding: '6rem 0', background: 'var(--color-surface)' }}>
+            <div className="container">
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(4, 1fr)',
+                    gap: '4rem',
+                    borderTop: '1px solid var(--color-border)',
+                    borderBottom: '1px solid var(--color-border)',
+                    padding: '4rem 0'
+                }}>
+                    {stats.map((stat, index) => (
+                        <div key={index} style={{ textAlign: 'left' }}>
+                            <div style={{
+                                fontSize: '3rem',
+                                fontWeight: 800,
+                                color: 'var(--color-primary)',
+                                fontFamily: 'var(--font-mono)',
+                                letterSpacing: '-0.05em'
+                            }}>
+                                {stat.value}
+                            </div>
+                            <div style={{
+                                fontSize: '0.9rem',
+                                color: 'var(--color-secondary)',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.1em',
+                                fontWeight: 600,
+                                marginTop: '0.5rem'
+                            }}>
+                                {stat.label}
+                            </div>
                         </div>
                     ))}
                 </div>

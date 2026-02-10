@@ -4,42 +4,19 @@ const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="footer">
-            <div className="footer-container">
-                <div className="footer-content">
-                    <div className="footer-brand">
-                        <a href="#" className="footer-logo">JohnDoe</a>
-                        <p className="footer-tagline">Building the future, one pixel at a time.</p>
+        <footer style={{ padding: '6rem 0', borderTop: '1px solid var(--color-border)', background: 'var(--color-bg)' }}>
+            <div className="container">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
+                    <div>
+                        <div style={{ fontWeight: 800, fontSize: '1.4rem', letterSpacing: '-0.05em', marginBottom: '0.5rem' }}>JD.</div>
+                        <p style={{ color: 'var(--color-secondary)', fontSize: '0.9rem' }}>© {currentYear} Handcrafted with precision.</p>
                     </div>
 
-                    <div className="footer-links">
-                        <div className="link-group">
-                            <h4>Navigation</h4>
-                            <ul>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#work">Work</a></li>
-                                <li><a href="#experience">Experience</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
-                        </div>
-
-                        <div className="link-group">
-                            <h4>Social</h4>
-                            <ul>
-                                <li><a href="#">LinkedIn</a></li>
-                                <li><a href="#">GitHub</a></li>
-                                <li><a href="#">Twitter</a></li>
-                                <li><a href="#">Dribbble</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="footer-bottom">
-                    <p>&copy; {currentYear} John Doe. All rights reserved.</p>
-                    <div className="footer-legal">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                    <div style={{ display: 'flex', gap: '2rem' }}>
+                        <a href="#" className="nav-link" style={{ fontSize: '0.9rem' }}>LinkedIn</a>
+                        <a href="#" className="nav-link" style={{ fontSize: '0.9rem' }}>GitHub</a>
+                        <a href="#" className="nav-link" style={{ fontSize: '0.9rem' }}>Twitter</a>
+                        <a href="#" className="nav-link" style={{ fontSize: '0.9rem' }}>Dribbble</a>
                     </div>
                 </div>
             </div>

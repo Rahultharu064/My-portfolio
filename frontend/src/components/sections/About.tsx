@@ -2,55 +2,58 @@ import React from 'react';
 
 const About: React.FC = () => {
     return (
-        <section className="about" id="about">
-            <div className="about-container">
-                <div className="section-header">
-                    <span className="section-eyebrow">Get to know me</span>
-                    <h2 className="section-title">About Me</h2>
-                </div>
-
-                <div className="about-grid">
-                    <div className="about-image">
-                        <div className="about-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" alt="About John Doe" />
-                            <div className="about-image-decoration"></div>
+        <section className="about" id="about" style={{ padding: '10rem 0' }}>
+            <div className="container">
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '8vw', alignItems: 'center' }}>
+                    <div className="about-visual initial-fade-in">
+                        <div style={{
+                            position: 'relative',
+                            borderRadius: '32px',
+                            overflow: 'hidden',
+                            boxShadow: 'var(--shadow-diffuse)',
+                            aspectRatio: '0.8'
+                        }}>
+                            <img
+                                src="https://images.unsplash.com/photo-1552061076-960271427d72?q=80&w=2070&auto=format&fit=crop"
+                                alt="Professional Environment"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
+                            <div style={{
+                                position: 'absolute',
+                                inset: 0,
+                                background: 'linear-gradient(to bottom, transparent, var(--color-bg))',
+                                opacity: 0.4
+                            }}></div>
                         </div>
                     </div>
 
                     <div className="about-content">
-                        <p className="about-lead">
-                            I'm a software engineer who believes great code is
-                            invisible until it's needed.
+                        <span className="section-tag">About me</span>
+                        <h2 className="section-title text-gradient" style={{ marginBottom: '2rem' }}>
+                            Solving Complex Problems <br />
+                            Through Strategic Design
+                        </h2>
+
+                        <p style={{ fontSize: '1.2rem', color: 'var(--color-primary)', marginBottom: '1.5rem', fontWeight: 500 }}>
+                            Based in San Francisco, I collaborate with founders and
+                            forward-thinking companies to build digital products that
+                            scale and inspire.
                         </p>
 
-                        <p className="about-text">
-                            With over 5 years of experience in full-stack development, I specialize in creating digital
-                            experiences that balance performance with elegant design. I love solving complex problems
-                            and turning ideas into reality through clean, efficient code.
+                        <p style={{ color: 'var(--color-secondary)', marginBottom: '3rem' }}>
+                            My approach combines mathematical precision with a keen eye for
+                            user behavior. I believe that every line of code should serve
+                            a purpose and every pixel should contribute to the story.
                         </p>
 
-                        <p className="about-text">
-                            My approach combines rigorous testing, user-centric design, and
-                            modern technology stacks to deliver products that users
-                            love and businesses value.
-                        </p>
-
-                        <blockquote className="about-quote">
-                            "Simple is better than complex. Complex is better than complicated."
-                        </blockquote>
-
-                        <div className="about-values">
-                            <div className="value-item">
-                                <h4>Code Quality</h4>
-                                <p>Clean, maintainable, and scalable architecture.</p>
+                        <div className="about-values" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                            <div className="card" style={{ padding: '1.5rem' }}>
+                                <h4 style={{ color: 'var(--color-accent)', marginBottom: '0.5rem' }}>01. Performance</h4>
+                                <p style={{ fontSize: '0.9rem', color: 'var(--color-secondary)' }}>Optimization is not an afterthought; it's the core of my build process.</p>
                             </div>
-                            <div className="value-item">
-                                <h4>Performance</h4>
-                                <p>Optimized for speed and efficiency at every level.</p>
-                            </div>
-                            <div className="value-item">
-                                <h4>Innovation</h4>
-                                <p>Always staying ahead with the latest technologies.</p>
+                            <div className="card" style={{ padding: '1.5rem' }}>
+                                <h4 style={{ color: 'var(--color-accent)', marginBottom: '0.5rem' }}>02. Scalability</h4>
+                                <p style={{ fontSize: '0.9rem', color: 'var(--color-secondary)' }}>Building systems that grow seamlessly alongside your user base.</p>
                             </div>
                         </div>
                     </div>
